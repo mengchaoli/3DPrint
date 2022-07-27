@@ -19,7 +19,7 @@ const DefaultProps = {
 
 const Header: React.FC<Props> = (props) => {
   return (
-    <div>
+    <div className="header">
       LOGO
       <nav>
         {props.head}
