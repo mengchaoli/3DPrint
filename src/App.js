@@ -9,10 +9,10 @@ function App() {
   return (
     <div className="App">
       <Header />
-      {/* <Routes>
+      <Routes>
         <Route path="/" exact element={<Home />} />
         <Route path="/about-us" exact element={<About />} />
-      </Routes> */}
+      </Routes>
     </div>
   );
 }
