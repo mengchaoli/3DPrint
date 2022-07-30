@@ -3,7 +3,7 @@ import "./assets/styles/main.scss";
 import { Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import About from "./pages/About";
-import Header from "./layout/header.tsx";
+import Header from "./layout/header";
 
 function App() {
   return (
