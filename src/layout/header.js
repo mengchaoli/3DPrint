@@ -22,7 +22,11 @@ const Header = (props) => {
         marginTop={0}
       />
       {/* burger menu end */}
-      {/* <nav className="header__nav">
+      <nav
+        className={`header__nav ${
+          isHamburgerActive ? "header__nav--open" : ""
+        }`}
+      >
         <ul className="">
           <li>
             <Link to="/">Home</Link>
@@ -31,7 +35,7 @@ const Header = (props) => {
             <Link to="/about-us">About us</Link>
           </li>
         </ul>
-      </nav> */}
+      </nav>
     </div>
   );
 };
