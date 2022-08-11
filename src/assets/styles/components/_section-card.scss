@@ -4,6 +4,7 @@
   width: 100px;
   height: 100px;
   transition: all 0.5s ease;
+  color: $primary-color;
 
   &:hover {
     cursor: pointer;
@@ -15,6 +16,10 @@
   }
 
   &__name {
-    color: $primary-color;
+  }
+
+  &.selected {
+    background-color: $primary-color;
+    color: white;
   }
 }
