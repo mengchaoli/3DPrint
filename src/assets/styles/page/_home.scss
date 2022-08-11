@@ -1,0 +1,12 @@
+.home-wrapper {
+  @include all-page-wrapper();
+
+  .home-section-card-wrapper {
+    margin-top: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 10px;
+    // background-color: #2196f3;
+    padding: 10px;
+  }
+}
