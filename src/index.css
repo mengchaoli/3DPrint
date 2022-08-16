@@ -6,6 +6,9 @@
   box-sizing: border-box;
 }
 
-body {
+body,
+input,
+textarea,
+button {
   font-family: "Patrick Hand SC", cursive;
 }

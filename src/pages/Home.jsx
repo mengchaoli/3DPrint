@@ -1,3 +1,4 @@
+import axios from "axios";
 import SectionCard from "../components/sectionCard";
 
 const Home = () => {
@@ -22,6 +23,18 @@ const Home = () => {
     }
   };
 
+  const handleBtnOnClick = () => {
+    console.log("clicked!");
+    axios
+      .get("/api")
+      .then((res) => {
+        console.log(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <div className="home-wrapper">
       What section(s) would you like to add to your space?
@@ -35,6 +48,9 @@ const Home = () => {
           </div>
         ))}
       </div>
+      <button className="btn btn--sm" onClick={handleBtnOnClick}>
+        Let's Go
+      </button>
     </div>
   );
 };
