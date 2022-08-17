@@ -11,6 +11,10 @@
   flex-direction: column;
 }
 
+.bold {
+  font-weight: 600;
+}
+
 @mixin all-page-wrapper {
   // do media screen here
   width: 90%;
