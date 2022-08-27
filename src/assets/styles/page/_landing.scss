@@ -1,0 +1,33 @@
+.landing__top {
+  background-image: linear-gradient(
+      rgba(248, 247, 216, 0.7),
+      rgba(248, 247, 216, 0.7)
+    ),
+    url("../../images/landing.jpg");
+  background-repeat: no-repeat;
+  // over = Scales the image to be large enough until the background area is completely covered by the image. Some parts of the image may not be in view within the area.
+  // 100% = Fills the area but all of the image is visible. It might screw with proportions though.
+  // background-size: 100% 100%;
+  background-size: cover;
+  width: 100%;
+  height: calc(100vh - 60px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+
+  //   .landing__layer {
+  //     background-color: rgba(248, 247, 216, 0.7);
+  //     position: absolute;
+  //     top: 0;
+  //     left: 0;
+  //     width: 100%;
+  //     height: 100%;
+  //   }
+
+  .landing__text {
+    margin: auto;
+    width: 300px;
+    // border: 1px solid black;
+  }
+}

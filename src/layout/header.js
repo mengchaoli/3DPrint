@@ -19,8 +19,9 @@ const Header = (props) => {
 
   // create an event listener
   useEffect(() => {
+    handleResize();
     window.addEventListener("resize", handleResize);
-  });
+  }, []);
 
   return (
     <div className="header">
