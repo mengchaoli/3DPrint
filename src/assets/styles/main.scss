@@ -1,6 +1,6 @@
-@import "./base/variables";
+@import './base/variables';
 
-@import "./layout/header";
+@import './layout/header';
 
 // utils classes
 .center {
@@ -15,6 +15,10 @@
   font-weight: 600;
 }
 
+.error {
+  color: red;
+}
+
 @mixin all-page-wrapper {
   // do media screen here
   width: 90%;
@@ -23,6 +27,6 @@
   flex: 1 1 auto;
 }
 
-@import "./page/index";
+@import './page/index';
 
-@import "./components/index";
+@import './components/index';

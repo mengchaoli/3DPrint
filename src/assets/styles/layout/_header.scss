@@ -21,6 +21,7 @@
     position: absolute;
     top: -100%;
     // opacity: 0;
+    z-index: 1;
     transition: all 0.5s ease;
     flex-direction: column;
     list-style-type: none;
@@ -34,7 +35,6 @@
       top: 60px;
       // opacity: 1;
       transition: all 0.5s ease;
-      z-index: 1;
       align-content: center;
       padding-left: 0px;
     }

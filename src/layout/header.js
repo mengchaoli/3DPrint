@@ -1,12 +1,15 @@
 // Function Component ( with props and default props ):
 
-import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
-import Burger from "react-css-burger";
+import React, { useState, useEffect, useContext } from 'react';
+import { Link } from 'react-router-dom';
+import Burger from 'react-css-burger';
+import AuthContext from '../store/auth-context';
 
 const Header = (props) => {
   const [isHamburgerActive, setIsHamburgerActive] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+
+  const authCtx = useContext(AuthContext);
 
   //choose the screen size
   const handleResize = () => {
@@ -20,13 +23,13 @@ const Header = (props) => {
   // create an event listener
   useEffect(() => {
     handleResize();
-    window.addEventListener("resize", handleResize);
+    window.addEventListener('resize', handleResize);
   }, []);
 
   return (
-    <div className="header">
-      <div className="header__container">
-        <div className="header__logo">LOGO</div>
+    <div className='header'>
+      <div className='header__container'>
+        <div className='header__logo'>LOGO</div>
         {/* <nav
         className={`header__nav ${
           isHamburgerActive ? "header__nav--open" : ""
@@ -34,21 +37,23 @@ const Header = (props) => {
       > */}
         <ul
           className={`header__nav ${
-            isHamburgerActive ? "header__nav--open" : ""
+            isHamburgerActive ? 'header__nav--open' : ''
           }`}
         >
-          <li className="">
-            <Link to="/">Home</Link>
+          <li className=''>
+            <Link to='/'>Home</Link>
           </li>
           <li>
-            <Link to="/about-us">About us</Link>
+            <Link to='/about-us'>About us</Link>
           </li>
           <li>
-            <Link to="/about-us">About us</Link>
+            <Link to='/about-us'>About us</Link>
           </li>
-          <li>
-            <Link to="/sign-in">Sign In</Link>
-          </li>
+          {!authCtx.isLoggedIn && (
+            <li>
+              <Link to='/sign-in'>Sign In</Link>
+            </li>
+          )}
         </ul>
         {/* </nav> */}
 
@@ -57,8 +62,8 @@ const Header = (props) => {
           <Burger
             onClick={() => setIsHamburgerActive(!isHamburgerActive)}
             active={isHamburgerActive}
-            burger="elastic"
-            color="pink"
+            burger='elastic'
+            color='pink'
             hoverOpacity={0.8}
             scale={0.7}
             marginLeft={0}
