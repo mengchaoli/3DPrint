@@ -31,13 +31,23 @@ const SignIn = () => {
         password,
       })
       .then((res) => {
-        authCtx.login(res.data.accessToken);
-        console.log(authCtx);
-        navigate('/on-board');
+        const expirationTime = new Date(
+          new Date().getTime() + +res.data.expiresIn * 1000
+        );
+        authCtx.login(res.data.accessToken, expirationTime.toISOString());
+        if (!isSignIn) {
+          navigate('/on-board');
+        } else {
+          // TODO
+          navigate('/home');
+        }
       })
       .catch((err) => {
         passwordRef.current.value = '';
-        setErrorMessage(err.response.data.message);
+        // make sure the error is from response, not from above .then
+        if (err.response) {
+          setErrorMessage(err.response.data.message);
+        }
       });
   };
 

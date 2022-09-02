@@ -54,6 +54,11 @@ const Header = (props) => {
               <Link to='/sign-in'>Sign In</Link>
             </li>
           )}
+          {!authCtx.isLoggedIn && (
+            <li>
+              <Link to='/sign-in'>Sign Up</Link>
+            </li>
+          )}
         </ul>
         {/* </nav> */}
 
